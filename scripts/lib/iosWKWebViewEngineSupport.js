@@ -188,7 +188,7 @@ function setMacro(xcodeProject) {
     }
 
     var isModified = false;
-    var injectedDefinition = strFormat('"%s=%d"', WKWEBVIEW_MACRO, isWkWebViewEngineUsed);
+    var injectedDefinition = strFormat('"$(inherited) %s=%d"', WKWEBVIEW_MACRO, isWkWebViewEngineUsed);
     preprocessorDefs.forEach(function(item, idx) {
       if (item.indexOf(WKWEBVIEW_MACRO) !== -1) {
         preprocessorDefs[idx] = injectedDefinition;
